@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerticAI Labs - Democratizing Robot Learning</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #64ffda;
+            --text-light: #ccd6f6;
+            --text-dark: #8892b0;
+            --background-light: #112240;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 1rem;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .page-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            gap: 4rem;
+        }
+
+        .text-container {
+            flex: 1;
+            max-width: 50%;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .text-container.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page-section h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .page-section h2 {
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .page-section p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        /* Specific section styling */
+        #about {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('bg1.png') no-repeat center center/cover;
+        }
+
+        #founder {
+             background: linear-gradient(rgba(17, 34, 64, 0.9), rgba(17, 34, 64, 0.9)), url('bg2.png') no-repeat center center/cover;
+        }
+
+        #products {
+             background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1620712943543-2858200e944a?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+        }
+
+        footer {
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* For smaller screens */
+        @media (max-width: 768px) {
+            .section-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .text-container, .image-container {
+                max-width: 100%;
+            }
+            .image-container {
+                order: -1; /* Move image above text */
+                margin-bottom: 2rem;
+            }
+            header {
+                padding: 1rem;
+            }
+            nav ul li {
+                margin-left: 1rem;
+            }
+        }
+
+        .image-container {
+            flex: 1;
+            max-width: 45%;
+            position: relative; /* Needed for pagination positioning */
+        }
+
+        .swiper-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden; /* Hide overflowing slides */
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .swiper-pagination {
+            position: static; /* Position it in the normal flow */
+            margin-top: 1rem; /* Add some space above the pagination */
+            text-align: center;
+        }
+
+        .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--secondary-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#about" class="logo">VerticAI Labs</a>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#founder">Founder</a></li>
+                <li><a href="#products">Products</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="page-section">
+            <div class="section-content">
+                <div class="text-container">
+                    <h1>About VerticAI Labs</h1>
+                    <h2>Democratizing Robot Learning for Everyone.</h2>
+                    <p>Our vision is to break down the barriers to robot learning. We are dedicated to creating intuitive software that empowers non-experts to teach robots a wide variety of complex tasks.</p>
+                    <p>At VerticAI Labs, we believe that the future of robotics lies in its accessibility. We're building the tools to make that future a reality.</p>
+                </div>
+                <div class="image-container">
+                </div>
+            </div>
+        </section>
+
+        <section id="founder" class="page-section">
+            <div class="section-content">
+                 <div class="image-container">
+                    <img src="Founder.jpeg" alt="Portrait of the founder.">
+                </div>
+                <div class="text-container">
+                    <h1>Meet the Founder</h1>
+                    <h2>Dr. Changjoo Nam, Associate Professor in AI Robotics.</h2>
+                    <p>With over 15 years of experience at the intersection of AI, robotics, and HRI. Dr. Nam founded VerticAI Labs to bridge the gap between cutting-edge research and real-world application.</p>
+                    <p>His work has been published in numerous international journals, and he is a frequent speaker on the topic of making advanced technology in robotics. He holds a Ph.D. in Robotics from a leading technology institute.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="page-section">
+            <div class="section-content">
+                <div class="text-container">
+                    <h1>Our Product</h1>
+                    <h2>Introducing 'Easy Trainer' - The intuitive platform for robot instruction.</h2>
+                    <p>Easy Trainer is a revolutionary software suite that allows users to train robots through simple, human-like instructions. No coding required. Just demonstrate, guide, and let our AI do the heavy lifting.</p>
+                    <p>From manufacturing lines to research labs, Easy Trainer accelerates development and opens up new possibilities for automation. Beta access coming soon.</p>
+                </div>
+                <div class="image-container">
+                    <!-- Slider main container -->
+                    <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><img src="product1.png" alt="Product image 1"></div>
+                            <div class="swiper-slide"><img src="product2.png" alt="Product image 2"></div>
+                            <div class="swiper-slide"><img src="product3.png" alt="Product image 3"></div>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 VerticAI Labs, Inc. All rights reserved.</p>
+        <p>35 Baekbeom-ro, Mapo-gu, Seoul 04107, South Korea | contact@verticai.com</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.page-section');
+            const textContainers = document.querySelectorAll('.text-container');
+
+            const observerOptions = {
+                root: null, // relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.4 // 40% of the item must be visible to trigger
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    const textContainer = entry.target.querySelector('.text-container');
+                    if (entry.isIntersecting) {
+                        textContainer.classList.add('is-visible');
+                    } else {
+                        textContainer.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Smooth scroll for nav links
+            document.querySelectorAll('header a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            const swiper = new Swiper('.swiper-container', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                grabCursor: true,
+            });
+        });
+    </script>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
