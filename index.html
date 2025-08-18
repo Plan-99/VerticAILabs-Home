@@ -147,27 +147,6 @@
             margin: 0.5rem 0;
         }
 
-        /* For smaller screens */
-        @media (max-width: 768px) {
-            .section-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .text-container, .image-container {
-                max-width: 100%;
-            }
-            .image-container {
-                order: -1; /* Move image above text */
-                margin-bottom: 2rem;
-            }
-            header {
-                padding: 1rem;
-            }
-            nav ul li {
-                margin-left: 1rem;
-            }
-        }
-
         .image-container {
             flex: 1;
             max-width: 45%;
@@ -200,19 +179,127 @@
             background: var(--secondary-color);
         }
 
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 0.5rem;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: var(--text-light);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        /* For smaller screens */
+        @media (max-width: 768px) {
+            .page-section {
+                height: auto;
+                padding: 5rem 2rem;
+            }
+
+            .section-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .text-container, .image-container {
+                max-width: none;
+                width: 100%;
+            }
+            #founder .image-container {
+                order: -1; /* Move image above text */
+                margin-bottom: 2rem;
+            }
+            #products .image-container {
+                order: 1; /* Move image below text */
+                margin-top: 2rem;
+            }
+            .image-container img {
+                width: 100%;
+                height: auto;
+            }
+            header {
+                padding: 1rem;
+            }
+            .desktop-nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .mobile-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--background-light);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start; /* Align to top */
+                align-items: center;
+                padding-top: 5rem; /* Add some padding at the top */
+                transition: right 0.3s ease-in-out;
+                z-index: 100;
+            }
+
+            .mobile-nav.open {
+                right: 0;
+            }
+
+            .mobile-nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .mobile-nav ul li {
+                margin: 1.5rem 0;
+            }
+
+            .mobile-nav ul li a {
+                color: var(--text-light); /* White text color */
+                text-decoration: none; /* No underline */
+                font-size: 1.2rem; /* Bigger font size */
+            }
+        }
+
     </style>
 </head>
 <body>
 
     <header>
         <a href="#about" class="logo">VerticAI Labs</a>
-        <nav>
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#founder">Founder</a></li>
                 <li><a href="#products">Products</a></li>
             </ul>
         </nav>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#founder">Founder</a></li>
+                <li><a href="#products">Products</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>
@@ -318,6 +405,13 @@
                     clickable: true,
                 },
                 grabCursor: true,
+            });
+
+            const hamburger = document.querySelector('.hamburger');
+            const mobileNav = document.querySelector('.mobile-nav');
+
+            hamburger.addEventListener('click', () => {
+                mobileNav.classList.toggle('open');
             });
         });
     </script>
