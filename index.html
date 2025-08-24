@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VerticAI Labs - Democratizing Robot Learning</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
         :root {
@@ -201,6 +202,60 @@
             display: none;
         }
 
+        #contact {
+            background: linear-gradient(rgba(17, 34, 64, 0.9), rgba(17, 34, 64, 0.9)), url('bg2.png') no-repeat center center/cover;
+        }
+
+        .form-container {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        #contact-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact-form label {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            text-align: left;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--text-dark);
+            background-color: var(--background-light);
+            color: var(--text-light);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        #contact-form button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+            font-weight: bold;
+        }
+
+        #contact-form button:hover {
+            background-color: #50e3c2;
+        }
+
         /* For smaller screens */
         @media (max-width: 768px) {
             .page-section {
@@ -273,6 +328,15 @@
                 text-decoration: none; /* No underline */
                 font-size: 1.2rem; /* Bigger font size */
             }
+
+            #contact .text-container,
+            #contact .form-container {
+                max-width: 100%;
+            }
+
+            #contact .text-container {
+                margin-bottom: 2rem;
+            }
         }
 
     </style>
@@ -286,6 +350,7 @@
                 <li><a href="#about">About Us</a></li>
                 <!-- <li><a href="#founder">Founder</a></li> -->
                 <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <button class="hamburger">
@@ -298,6 +363,7 @@
                 <li><a href="#about">About Us</a></li>
                 <!-- <li><a href="#founder">Founder</a></li> -->
                 <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -354,6 +420,29 @@
                 </div>
             </div>
         </section>
+
+        <section id="contact" class="page-section">
+            <div class="section-content">
+                <div class="text-container">
+                    <h1>Contact Us</h1>
+                    <h2>Get in touch with us.</h2>
+                    <p>We're here to answer any questions you may have. Reach out to us and we'll respond as soon as we can.</p>
+                </div>
+                <div class="form-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="10" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -362,6 +451,8 @@
     </footer>
 
     <script>
+        emailjs.init("lzc5TiH3akIbAe3Iy");
+
         document.addEventListener('DOMContentLoaded', function() {
             const sections = document.querySelectorAll('.page-section');
             const textContainers = document.querySelectorAll('.text-container');
@@ -412,6 +503,30 @@
 
             hamburger.addEventListener('click', () => {
                 mobileNav.classList.toggle('open');
+            });
+
+            const contactForm = document.querySelector('#contact-form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // These IDs from the EmailJS account page
+                const serviceID = 'VerticAI_Labs';
+                const templateID = 'template_1x5kak6';
+
+                const templateParams = {
+                    from_email: document.getElementById('email').value,
+                    message: document.getElementById('message').value + '\n\n보낸사람: ' + document.getElementById('email').value,
+                };
+
+                emailjs.send(serviceID, templateID, templateParams)
+                    .then((response) => {
+                       console.log('SUCCESS!', response.status, response.text);
+                       alert('Your message has been sent successfully!');
+                       contactForm.reset();
+                    }, (error) => {
+                       console.log('FAILED...', error);
+                       alert('Failed to send the message. Please try again later.');
+                    });
             });
         });
     </script>
