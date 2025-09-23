@@ -155,6 +155,22 @@
             position: relative; /* Needed for pagination positioning */
         }
 
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         .swiper-container {
             width: 100%;
             border-radius: 8px;
@@ -397,6 +413,9 @@
                     <p>At VerticAI Labs, we believe that the future of robotics lies in its accessibility. We're building the tools to make that future a reality.</p>
                 </div>
                 <div class="image-container">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/k37HkYB9anQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </section>
