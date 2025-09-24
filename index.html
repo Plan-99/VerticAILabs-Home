@@ -381,13 +381,13 @@
 <body>
 
     <header>
-        <a href="#about" class="logo">VerticAI Labs</a>
+        <a href="/" class="logo">VerticAI Labs</a>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="#about">About Us</a></li>
-                <!-- <li><a href="#founder">Founder</a></li> -->
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/about">About Us</a></li>
+                <!-- <li><a href="/founder">Founder</a></li> -->
+                <li><a href="/products">Products</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
         <button class="hamburger">
@@ -397,10 +397,10 @@
         </button>
         <div class="mobile-nav">
             <ul>
-                <li><a href="#about">About Us</a></li>
-                <!-- <li><a href="#founder">Founder</a></li> -->
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/about">About Us</a></li>
+                <!-- <li><a href="/founder">Founder</a></li> -->
+                <li><a href="/products">Products</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -520,16 +520,55 @@
                 observer.observe(section);
             });
             
-            // Smooth scroll for nav links
-            document.querySelectorAll('header a[href^="#"]').forEach(anchor => {
+            const navigateTo = (path, query) => {
+                const queryParams = new URLSearchParams(query);
+                const page = queryParams.get('page');
+
+                const sectionMap = {
+                    '/': '#about',
+                    '/about': '#about',
+                    '/products': '#products',
+                    '/contact': '#contact',
+                    '1': '#about',
+                    '2': '#products',
+                    '3': '#contact',
+                };
+
+                let sectionId;
+                if (page && sectionMap[page]) {
+                    sectionId = sectionMap[page];
+                } else if (sectionMap[path]) {
+                    sectionId = sectionMap[path];
+                } else {
+                    sectionId = '#about'; // Default to about section
+                }
+
+                if (sectionId) {
+                    document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+
+            document.querySelectorAll('header a[href^="/"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
+                    const path = this.getAttribute('href');
+                    history.pushState({ path }, '', path);
+                    navigateTo(path, location.search);
 
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    // Close mobile nav if open
+                    const mobileNav = document.querySelector('.mobile-nav');
+                    if (mobileNav.classList.contains('open')) {
+                        mobileNav.classList.remove('open');
+                    }
                 });
             });
+
+            window.addEventListener('popstate', (e) => {
+                navigateTo(location.pathname, location.search);
+            });
+
+            // Initial page load
+            navigateTo(location.pathname, location.search);
 
             const swiper = new Swiper('.swiper-container', {
                 loop: true,
