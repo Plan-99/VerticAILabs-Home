@@ -103,7 +103,6 @@
             justify-content: space-between;
             width: 100%;
             max-width: 1200px;
-            gap: 4rem;
         }
 
         .text-container {
@@ -162,6 +161,7 @@
         #products {
              background: linear-gradient(var(--primary-color-transparent), var(--primary-color-transparent));
         }
+        
 
         #contact {
             position: relative;
@@ -349,8 +349,8 @@
                 margin-bottom: 2rem;
             }
             #products .image-container {
-                order: 1; /* Move image below text */
-                margin-top: 2rem;
+                order: -1; /* Move image above text */
+                margin-bottom: 2rem;
             }
             .image-container img {
                 width: 100%;
@@ -462,21 +462,11 @@
             <div class="section-content">
                 <div class="text-container">
                     <h1>Easy Trainer</h1>
-                    <h2>The intuitive platform for robot instruction.</h2>
+                    <h2>No-Code Learning Tool for Any Robot</h2>
                     <p>Easy Trainer is a revolutionary software suite that allows users to train robots through simple, human-like instructions. No coding required. Just demonstrate, guide, and let our AI do the heavy lifting.</p>
                     <p>From manufacturing lines to research labs, Easy Trainer accelerates development and opens up new possibilities for automation. Beta access coming soon.</p>
                     <a href="Easy Trainer Introduction.pdf" target="_blank" class="btn">Product Introduction</a>
                 </div>
-                <!-- <div class="image-container">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="product1.png" alt="Product image 1"></div>
-                            <div class="swiper-slide"><img src="product2.png" alt="Product image 2"></div>
-                            <div class="swiper-slide"><img src="product3.png" alt="Product image 3"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div> -->
                 <div class="image-container">
                     <div class="video-wrapper">
                         <iframe src="https://drive.google.com/file/d/1ksmfYXO0PsJheUgnwPnXT66Jthf6OaU4/preview" width="640" height="480" allow="autoplay"></iframe>
@@ -577,7 +567,7 @@
                 } else if (sectionMap[path]) {
                     sectionId = sectionMap[path];
                 } else {
-                    sectionId = '#about'; // Default to about section
+                    sectionId = '#products'; // Default to about section
                 }
 
                 if (sectionId) {
