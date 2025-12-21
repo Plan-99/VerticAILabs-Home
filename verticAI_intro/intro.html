@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Easy Trainer</title>
+   <link rel="stylesheet" type="text/css" href="css/intro.css" />
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+   <!-- swiper -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <!-- AOS -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <!-- Chart -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body class="">
+   <section class="mainVisual">
+      <div class="visual swiper">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide">
+               <video autoplay muted playsinline loop data-keepplaying>
+                  <source src="img/visual_movie01.mov">
+               </video>
+            </div>
+            <div class="swiper-slide">
+               <video autoplay muted playsinline loop data-keepplaying>
+                  <source src="img/visual_movie02.mov">
+               </video>
+            </div>
+         </div>
+      </div>
+      <div class="visual-txt">
+         <p class="typo-txt fw900" data-aos="fade-up" data-aos-delay="100">
+            <span style="--i:1">E</span>
+            <span style="--i:2">a</span>
+            <span style="--i:3">s</span>
+            <span style="--i:4">y</span>
+            <span style="--i:5">&nbsp;</span>
+            <span style="--i:6">T</span>
+            <span style="--i:7">r</span>
+            <span style="--i:8">a</span>
+            <span style="--i:9">i</span>
+            <span style="--i:10">n</span>
+            <span style="--i:11">e</span>
+            <span style="--i:12">r</span>
+         </p>
+         <p class="sm-txt color-sky fw600" data-aos="fade-up"  data-aos-delay="2300">A VerticAI Labs Solution</p>
+      </div>
+
+      <div class="mouse"><img src="img/icon-mouse.svg" alt=""></div>
+   </section>
+
+   <section class="et_info">
+      <div class="inner">
+         <div class="box">
+            <p class="tit fw600" data-aos="fade-up" data-aos-delay="100"><b class="txt-click color-org">클릭</b> 으로, <span class="m_br"></span><b class="txt-robot fw800 color-sky2">로봇</b> 을 <b class="fw800 color-light">깨우다</b> <img src="img/img_light.png" alt=""></p>
+            <div data-aos="fade-up" data-aos-delay="600">
+               <p class="txt">전문가의 영역이였던 로봇 AI, <span class="p_br"></span>이제 코딩없이 <span class="m_br"></span><span class="highlight">당신의 아이디어를 즉시 현실</span>로 만드세요.</p>
+               <p class="txt">복잡한 과정은 우리에게 맡기고 <span class="m_br"></span>창의력에만 집중할 시간입니다.</p>
+            </div>
+           
+         </div>
+      </div>
+   </section>
+
+   <section class="character character01">
+      <div class="inner">
+         <div class="title-area" >
+            <p class="sec-tit" data-aos="custom-title" data-aos-duration="1000" data-aos-delay="200">로보틱스의 높은 장벽</p>
+            <p class="sec-tit-sm" data-aos="fade-up" data-aos-delay="400">기존 로봇 개발은 소수의 전문가에게만 <span class="m_br"></span>허락된 복잡하고 어려운 과정의 연속이였습니다.</p>
+         </div>
+         <div class="crt-list">
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="400">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-robotics01_off.svg" alt=""></p>
+                  <p class="crt-tit">모듈 설치</p>
+                  <p class="crt-desc">로봇별 드라이브</p>
+               </div>
+            </div>
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="500">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-robotics02_off.svg" alt=""></p>
+                  <p class="crt-tit">ROS 학습</p>
+                  <p class="crt-desc">전문 프로그래밍</p>
+               </div>
+            </div>
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="600">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-robotics03_off.svg" alt=""></p>
+                  <p class="crt-tit">복잡한 연결</p>
+                  <p class="crt-desc">센서 및 하드웨어</p>
+               </div>
+            </div>
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="700">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-robotics04_off.svg" alt=""></p>
+                  <p class="crt-tit">비직관적 조작</p>
+                  <p class="crt-desc">티칭 펜던트</p>
+               </div>
+            </div>
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="800">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-robotics05_off.svg" alt=""></p>
+                  <p class="crt-tit">긴 개발 시간</p>
+                  <p class="crt-desc">높은 비용</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="character character02">
+      <div class="inner">
+         <div class="title-area">
+            <p class="sec-tit" data-aos="custom-title" data-aos-duration="1000" data-aos-delay="200"><span class="color-light">Easy Trainer</span>는 <span class="m_br"></span> 모두를 위한 솔루션입니다</p>
+            <p class="sec-tit-sm" data-aos="fade-up" data-aos-delay="400">기술적 배경에 관계없이, 로보틱스의 가능성을 <span class="m_br"></span>탐험하고 싶은 모든 창조자를 위해 탄생했습니다.</p>
+         </div>
+         <div class="crt-list">
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="500">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-solution01_off.svg" alt=""></p>
+                  <p class="crt-tit">아이디어 실현가</p>
+                  <p class="crt-desc">코딩은 싫지만 로봇으로 <span class="m_br"></span>세상을 바꾸고 싶은 모든 사람</p>
+               </div>
+            </div>
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="600">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-solution02_off.svg" alt=""></p>
+                  <p class="crt-tit">Physical AI 탐험가</p>
+                  <p class="crt-desc">로봇 학습의 세계를 <span class="m_br"></span>직접 경험하고 싶은 사람</p>
+               </div>
+            </div>
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="700">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-solution03_off.svg" alt=""></p>
+                  <p class="crt-tit">혁신적인 연구원</p>
+                  <p class="crt-desc">다양한 학습 모델을 빠르게 적용하고 <span class="m_br"></span>테스트하고 싶은 전문가</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="character character03">
+      <div class="inner">
+         <div class="title-area">
+            <p class="sec-tit" data-aos="custom-title" data-aos-duration="1000" data-aos-delay="200">How <span class="color-light">Easy Trainer</span> Works?</p>
+            <p class="sec-tit-sm" data-aos="fade-up" data-aos-delay="400">복잡함은 덜어내고, 핵심에만 집중하세요. <span class="m_br"></span>5단계의 직관적인 프로세스로 아이디어를 현실로 만듭니다.</p>
+         </div>
+         <div class="flex">
+            <div class="half txt-list" data-aos="fade-up" data-aos-delay="500">
+               <div class="txt-item">
+                  <p class="txt-num">1</p>
+                  <div class="txt-desc">
+                     <p class="tit">간단한 로봇 & 센서 구동</p>
+                     <p class="desc">클릭 한 번으로 로봇과 센서를 켜고, 끄고, 연결합니다.</p>
+                  </div>
+               </div>
+               <div class="txt-item">
+                  <p class="txt-num">2</p>
+                  <div class="txt-desc">
+                     <p class="tit">직관적인 원격 제어</p>
+                     <p class="desc">로봇과 같은 모양의 제어기로, 당신의 움직임이 곧 로봇의 움직임이 됩니다.</p>
+                  </div>
+               </div>
+               <div class="txt-item">
+                  <p class="txt-num">3</p>
+                  <div class="txt-desc">
+                     <p class="tit">로봇 학습 데이터 수집</p>
+                     <p class="desc">고품질 행동 데이터를 기록하여 AI 학습의 기반을 마련합니다.</p>
+                  </div>
+               </div>
+               <div class="txt-item">
+                  <p class="txt-num">4</p>
+                  <div class="txt-desc">
+                     <p class="tit">로봇 학습 파이프라인</p>
+                     <p class="desc">코딩 없이, 직관적인 인터페이스로 최신 AI 모델을 학습시킵니다.</p>
+                  </div>
+               </div>
+               <div class="txt-item">
+                  <p class="txt-num">5</p>
+                  <div class="txt-desc">
+                     <p class="tit">로봇 학습 테스트</p>
+                     <p class="desc">학습된 로봇이 스스로 작업을 수행하고 개선방안을 도출합니다.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="half chart-list" data-aos="fade-up" data-aos-delay="500">
+               <div class="chart-titbox">
+                  <p class="tit">개발 시간 구성의 혁신</p>
+                  <p class="desc">Easy Trainer는 비효율적인 코딩 시간을 줄이고, <span class="m_br"></span>핵심적인 데이터 수집과 테스트에 집중할 수 있도록 돕습니다.</p>
+               </div>
+               <div class="chart-box">
+                  <p class="tit">Easy Trainer 도입 전후 개발 시간 비율 비교 (%)</p>
+                  
+                  <div class="chart">
+                     <canvas id="bar-chart-grouped"></canvas>
+                  </div>
+
+                  <div class="chart-info">
+                     <p><span class="wh"></span> 도입 전 (Before)</p>
+                     <p><span class="sky"></span> 도입 후 (After)</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="character character04">
+      <div class="inner">
+         <div class="title-area">
+            <p class="sec-tit" data-aos="custom-title" data-aos-duration="1000" data-aos-delay="200">Why <span class="color-light">Easy Trainer</span> ?</p>
+            <p class="sec-tit-sm" data-aos="fade-up" data-aos-delay="400">단순한 도구를 넘어, <span class="m_br"></span>로보틱스 혁신을 위한 가장 강력한 파트너입니다.</p>
+         </div>
+         <div class="crt-list">
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="500">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-why01_off.svg" alt=""></p>
+                  <p class="crt-tit">압도적인 호환성</p>
+                  <p class="crt-desc">다양한 로봇과 센서에 호환 가능한 유일한 소프트웨어 및 조종 장치를 제공하여, 하드 웨어의 제약에서 벗어납니다.</p>
+               </div>
+            </div>
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="600">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-why02_off.svg" alt=""></p>
+                  <p class="crt-tit">최신 AI 기술</p>
+                  <p class="crt-desc">최신 논문에 등재된 다양한 학습 모델 및 기술을 클릭 한번으로 사용 할 수 있도록 지속적으로 업데이트 합니다.</p>
+               </div>
+            </div>
+            <div class="crt-item-data" data-aos="fade-up" data-aos-delay="700">
+               <div class="crt-item">
+                  <p class="crt-icon"><img src="img/icon-why03_off.svg" alt=""></p>
+                  <p class="crt-tit">미래 지향적 파트너쉽</p>
+                  <p class="crt-desc">로봇 전문 연구원들과 함께 미래의 Pyhsical AI 기술을 누구나 쉽게 사용 할 수 있도록 발전해 나갈 것입니다.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="launch">
+      <div class="inner">
+         <div class="title-area" data-aos="fade-up" data-aos-delay="400">
+            <div class="sec-tit color-light">
+               <span style="--i:1">가</span>
+               <span style="--i:2">설</span>
+               <span style="--i:3">에</span>
+               <span style="--i:4">서</span>
+               <span style="--i:5">&nbsp;</span>
+               <span style="--i:6">현</span>
+               <span style="--i:7">실</span>
+               <span style="--i:8">까</span>
+               <span style="--i:9">지</span>
+               <span style="--i:10">,</span>
+               <span style="--i:11">&nbsp;</span>
+               <span style="--i:12">가</span>
+               <span style="--i:13">장</span>
+               <span style="--i:14">&nbsp;</span>
+               <span style="--i:15">빠</span>
+               <span style="--i:16">른</span>
+               <span style="--i:17">&nbsp;</span>
+               <span style="--i:18">경</span>
+               <span style="--i:19">로</span>
+            </div>
+         </div>
+         <div class="launch-desc" data-aos="fade-up" data-aos-delay="1500">
+            <p class="txt">미래는 기다리는 것이 아니라 증명하는 것입니다.</p>
+            <p class="txt highlight"><span>Easy Trainer와 함께</span> <span>당신의 아이디어를 지금 바로 현실로 만드세요.</span></p>
+         </div>
+         <p class="btn" data-aos="fade-up" data-aos-delay="1700"><a href="">Launch Easy Trainer <img src="img/icon-more.svg" alt=""></a></p>
+      </div>
+      <div class="launch-bg">
+         <video autoplay muted playsinline loop data-keepplaying>
+            <source src="img/launch_movie.mp4">
+         </video>
+      </div>
+   </section>
+
+   <script>
+      $(function(){
+         
+         AOS.init({
+            duration: 600,
+            easing: 'ease-out',
+         });
+
+         // mouse
+         const mouseWrap = document.querySelector('.mouse');
+
+         window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+               mouseWrap.classList.add('hide');
+            } else {
+               mouseWrap.classList.remove('hide');
+            }
+         });
+
+
+         // click animation
+         const target = document.querySelector(".et_info .tit");
+         if (!target) return;
+
+         let timer = null;
+
+         const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+
+               if (entry.isIntersecting) {
+
+               clearTimeout(timer);
+
+               timer = setTimeout(() => {
+                  target.classList.add("run-anim");
+               }, 400); 
+
+               } else {
+
+               clearTimeout(timer);
+               target.classList.remove("run-anim");
+               }
+
+            });
+         }, { threshold: 0.6 });
+
+         io.observe(target);
+
+         // visual
+         var visualSwiper = new Swiper(".mainVisual .swiper", {
+            effect: 'fade',
+            speed: 1000,
+            autoplay: {
+                delay: 6000
+            },
+            loop: true,
+            on: {
+                slideChangeTransitionStart: function(){
+                    $(".mainVisual .swiper .swiper-slide-active video")[0].currentTime = 0;
+                    $(".mainVisual .swiper .swiper-slide-active video")[0].play();
+                }
+            }
+         });
+
+         // infomation hover
+         $('.character .crt-list .crt-item').hover(
+            function () {
+               const img = $(this).find('img');
+               img.attr('src', img.attr('src').replace(/_off(\.\w+)$/, '_on$1'));
+            },
+            function () {
+               const img = $(this).find('img');
+               img.attr('src', img.attr('src').replace(/_on(\.\w+)$/, '_off$1'));
+            }
+         );
+
+         // list highlight
+         const container = document.querySelector('.txt-list');
+         if (!container) return;
+
+         const items = container.querySelectorAll('.txt-item');
+         let index = 0;
+         let interval = null;
+         let startTimer = null;
+
+         function highlightNext() {
+            items.forEach(el => el.classList.remove('active'));
+            items[index].classList.add('active');
+            index = (index + 1) % items.length;
+         }
+
+         function startHighlight() {
+            clearInterval(interval);
+            index = 0;        
+            highlightNext();     
+            interval = setInterval(highlightNext, 2000); 
+         }
+
+         function stopHighlight() {
+            clearInterval(interval);
+            interval = null;
+            clearTimeout(startTimer);
+            items.forEach(el => el.classList.remove('active'));
+            index = 0;
+         }
+
+         const io2 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                  clearTimeout(startTimer);
+                  startTimer = setTimeout(() => {
+                  startHighlight();
+                  }, 200); 
+               } else {
+                  clearTimeout(startTimer);
+                  stopHighlight();
+               }
+            });
+         }, {
+            threshold: 0.5 
+         });
+
+         io2.observe(container);
+
+         // chart
+         let chartInstance = null;
+         const chartCanvas = document.getElementById("bar-chart-grouped");
+
+         function createChart() {
+            if (!chartCanvas) return;
+
+            chartInstance = new Chart(chartCanvas, {
+               type: 'bar',
+               data: {
+                  labels: ["코딩 & 설정", "데이터 수집", "학습 & 테스트"],
+                  datasets: [
+                  {
+                     label: "도입 전 (Before)",
+                     backgroundColor: "#FFFFFF",
+                     borderColor: "#FFFFFF",
+                     borderWidth: 1,
+                     maxBarThickness: 50,
+                     borderRadius: { topLeft: 20, topRight: 20 },
+                     data: [60, 25, 15]
+                  },
+                  {
+                     label: "도입 후 (After)",
+                     backgroundColor: "#31E0FF",
+                     borderColor: "#31E0FF",
+                     borderWidth: 1,
+                     maxBarThickness: 50,
+                     borderRadius: { topLeft: 20, topRight: 20 },
+                     data: [5, 15, 80]
+                  }
+                  ]
+               },
+               options: {
+                  animation: {
+                  duration: 1200, 
+                  easing: "easeOutQuart"
+                  },
+                  plugins: {
+                  legend: { display: false },
+                  title: { display: false }
+                  },
+                  scales: {
+                  x: {
+                     offset: true,
+                     ticks: {
+                        padding: 10,
+                        color: "#FFFFFF",
+                        font: {
+                        family: "'Paperozi', sans-serif",
+                        size: 13,
+                        weight: '500'
+                        }
+                     },
+                     grid: {
+                        categoryPercentage: 0.6,
+                        barPercentage: 0.7,
+                        drawBorder: false,
+                        drawOnChartArea: true,
+                        drawTicks: false,
+                        color: (context) => context.index === 0 ? "#FFFFFF" : "transparent",
+                        lineWidth: (context) => context.index === 0 ? 1 : 0
+                     }
+                  },
+                  y: {
+                     min: 0,
+                     max: 100,
+                     beginAtZero: true,
+                     ticks: {
+                        padding: 10,
+                        stepSize: 20,
+                        color: "#FFFFFF",
+                        font: {
+                        family: "'Paperozi', sans-serif",
+                        size: 10,
+                        weight: '500'
+                        }
+                     },
+                     grid: {
+                        drawBorder: false,
+                        drawOnChartArea: true,
+                        drawTicks: false,
+                        color: "rgba(255,255,255,0.8)",
+                        lineWidth: 1
+                     }
+                  }
+                  }
+               }
+            });
+         }
+
+         function destroyChart() {
+            if (chartInstance) {
+               chartInstance.destroy();
+               chartInstance = null;
+            }
+         }
+
+         const chartBox = document.querySelector(".chart-list");
+
+         if (chartBox) {
+            const chartObserver = new IntersectionObserver((entries) => {
+               entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+
+                  setTimeout(() => {
+                     destroyChart();
+                     createChart();
+                  }, 400);
+
+                  } else {
+                  destroyChart();
+                  }
+               });
+            }, {
+               threshold: 0.4
+            });
+
+            chartObserver.observe(chartBox);
+         }
+
+         // button effect
+         document.querySelectorAll('.launch .btn a').forEach(a => {
+            const img = a.querySelector('img');
+            const text = a.childNodes[0].textContent;
+
+            const parts = text.split('').map(ch =>
+               ch === ' ' ? `<span class="char">&nbsp;</span>` : `<span class="char">${ch}</span>`
+            );
+
+            if (img) parts.push(`<span class="char img-wrapper">${img.outerHTML}</span>`);
+
+            a.innerHTML = `<span class="letters">${parts.join('')}</span>`;
+            const chars = a.querySelectorAll('.char');
+
+            a.addEventListener('mouseenter', () => {
+               chars.forEach((ch, i) => {
+                  ch.style.animationDelay = `${i * 0.03}s`;
+               });
+            });
+
+            a.addEventListener('mouseleave', () => {
+               chars.forEach(ch => {
+                  ch.style.animation = 'none';
+                  void ch.offsetWidth;
+                  ch.style.animation = '';
+                  ch.style.animationDelay = '0s';
+               });
+            });
+         });
+      });
+   </script>
+</body>
+</html>

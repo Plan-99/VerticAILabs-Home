@@ -1,0 +1,15 @@
+인트로 영상부분을 두가지 방법을 진행했습니다.
+1. img폴더에 영상이 있고, video태그로 진행 
+2. youtube에서 가져와 ifame태그로 진행
+
+
+[intro.html]
+>> 영상을 직접 삽입 (video코드 사용)
+>> css/intro.css
+>> img폴더 전체
+
+
+[intro2.html]
+>> Youtube API를 사용
+>> css/intro2.css
+>> img폴더에서 visual_movie01.mov, visual_movie02.mov, launch_movie.mp4 빼고 사용
