@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot - Easy-Trainer Manual</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <div class="logo">ET</div>
+            <span>Easy-Trainer Manual</span>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html"><span class="nav-number">📘</span>홈</a></li>
+                <li><a href="01-installation.html" ><span class="nav-number">1</span>Installation</a></li>
+                <li><a href="02-sensor.html" ><span class="nav-number">2</span>Sensor</a></li>
+                <li><a href="03-robot.html" class="active"><span class="nav-number">3</span>Robot</a></li>
+                <li><a href="04-robot-assembly.html" ><span class="nav-number">4</span>Robot Assembly</a></li>
+                <li><a href="05-easy-controller.html" ><span class="nav-number">5</span>Easy-Controller</a></li>
+                <li><a href="06-teleoperation.html" ><span class="nav-number">6</span>Teleoperation</a></li>
+                <li><a href="07-workspace.html" ><span class="nav-number">7</span>Workspace</a></li>
+                <li><a href="08-data-collection.html" ><span class="nav-number">8</span>Data Collection</a></li>
+                <li><a href="09-data-augmentation.html" ><span class="nav-number">9</span>Data Augmentation</a></li>
+                <li><a href="10-training.html" ><span class="nav-number">10</span>Training</a></li>
+                <li><a href="11-inference.html" ><span class="nav-number">11</span>Inference</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="page-title">
+            <span class="title-number">3</span>
+            Robot
+        </h1>
+        <p class="page-subtitle">
+            로봇 연결, 설정 및 조작 방법을 안내합니다.
+        </p>
+
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🤖</span>
+                지원 로봇
+            </h2>
+            <div class="info-box">
+                <div class="info-box-title">호환 로봇 목록</div>
+                <ul class="step-list">
+                    <li class="step-item"><div class="step-content"><p class="step-text">Agile X Piper</p></div></li>
+                    <li class="step-item"><div class="step-content"><p class="step-text">레인보우로보틱스 RB시리즈</p></div></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">➕</span>
+                로봇 추가하기
+            </h2>
+
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>1. 로봇 추가</strong><br>
+                            로봇 페이지에서 "+" 버튼을 클릭합니다.
+                        </p>
+                        <img src="../img/slide_5_image_1.png" alt="로봇 추가" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>2-1. 지원 로봇 설정</strong><br>
+                            앱에서 지원하는 로봇일 경우, 로봇 이름, 로봇 종류, 통신 포트를 입력합니다.
+                        </p>
+                        <img src="../img/slide_5_image_2.png" alt="지원 로봇 설정" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>2-2. 비지원 로봇 설정</strong><br>
+                            앱에서 지원하지 않는 로봇일 경우, robot type에 custom 선택 후 ROS2 요소들을 직접 입력합니다.
+                        </p>
+                        <img src="../img/slide_4_image_11.png" alt="비지원 로봇 설정" class="step-image">
+                        <img src="../img/slide_3_image_8.png" alt="비지원 로봇 설정" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>3. 로봇 확인</strong><br>
+                            추가된 로봇의 버튼을 클릭하여 Joint 값이 정상적으로 표시되는지 확인합니다.
+                        </p>
+                        <img src="../img/slide_5_image_0.png" alt="로봇 확인" class="step-image">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🎮</span>
+                간단한 로봇 조작
+            </h2>
+
+            <div class="info-box">
+                <div class="info-box-title">조작 방법</div>
+                <p><strong>Joint Space 조작 / Task Space 조작</strong></p>
+                <p>아래 창에서 "+", "-" 버튼을 통해 간단하게 로봇을 조작할 수 있습니다.</p>
+            </div>
+
+            <h3 class="subsection-title">홈 포즈 설정</h3>
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">1. 우측 하단의 주황색 설정 모양 버튼을 클릭합니다.</p>
+                        <img src="../img/slide_6_image_1.png" alt="설정 버튼" class="step-image">
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">2. 원하는 홈 포즈를 입력한 후 저장합니다.</p>
+                        <img src="../img/slide_6_image_2.png" alt="홈 포즈 입력" class="step-image">
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">3. 이후 초록색 홈 버튼 클릭 시, 로봇이 저장한 포즈로 이동합니다.</p>
+                        <img src="../img/slide_6_image_1.png" alt="홈 포즈 입력" class="step-image">
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div class="info-box success">
+            <div class="info-box-title">💡 유용한 팁</div>
+            <p>로봇 조작 전에 반드시 안전한 작업 공간을 확보하세요.</p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="02-sensor.html" class="nav-button prev">← 이전</a>
+            <a href="04-robot-assembly.html" class="nav-button">다음 →</a>
+        </div>
+    </main>
+</body>
+</html>

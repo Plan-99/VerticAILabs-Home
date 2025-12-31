@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleoperation - Easy-Trainer Manual</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <div class="logo">ET</div>
+            <span>Easy-Trainer Manual</span>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html"><span class="nav-number">📘</span>홈</a></li>
+                <li><a href="01-installation.html" ><span class="nav-number">1</span>Installation</a></li>
+                <li><a href="02-sensor.html" ><span class="nav-number">2</span>Sensor</a></li>
+                <li><a href="03-robot.html" ><span class="nav-number">3</span>Robot</a></li>
+                <li><a href="04-robot-assembly.html" ><span class="nav-number">4</span>Robot Assembly</a></li>
+                <li><a href="05-easy-controller.html" ><span class="nav-number">5</span>Easy-Controller</a></li>
+                <li><a href="06-teleoperation.html" class="active"><span class="nav-number">6</span>Teleoperation</a></li>
+                <li><a href="07-workspace.html" ><span class="nav-number">7</span>Workspace</a></li>
+                <li><a href="08-data-collection.html" ><span class="nav-number">8</span>Data Collection</a></li>
+                <li><a href="09-data-augmentation.html" ><span class="nav-number">9</span>Data Augmentation</a></li>
+                <li><a href="10-training.html" ><span class="nav-number">10</span>Training</a></li>
+                <li><a href="11-inference.html" ><span class="nav-number">11</span>Inference</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="page-title">
+            <span class="title-number">6</span>
+            Teleoperation
+        </h1>
+        <p class="page-subtitle">
+            텔레오퍼레이션 설정 및 실행 방법을 안내합니다.
+        </p>
+
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">⚙️</span>
+                텔레오퍼레이션 설정
+            </h2>
+
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>1. 설정 시작</strong><br>
+                            어셈블리 페이지에서 어셈블리를 우클릭한 후 "Teleoperation Setting" 버튼을 클릭합니다.
+                        </p>
+                        <img src="../img/slide_9_image_0.png" alt="Teleoperation Setting" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>2. 리더 로봇 시작</strong><br>
+                            "Start Leader Robot" 버튼을 클릭합니다.
+                        </p>
+                    </div>
+                    <img src="../img/slide_9_image_1.png" alt="Joint 매칭" class="step-image">
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📍</span>
+                Step 1. 원점 캘리브레이션
+            </h2>
+            <div class="step-content">
+                <p class="step-text">
+                    <strong>1. Joint 매칭</strong><br>
+                    우측에 리더 로봇의 다이나믹셀 모터값들이 나타나면, 드래그 & 드랍으로 매칭되는 Joint 번호에 배치합니다.
+                    이때, 조인트가 Tool일 경우 Tool 체크박스를 체크합니다.
+                </p>
+                <img src="../img/slide_9_image_2.png" alt="Joint 매칭" class="step-image">
+            </div>
+            <div class="content-block">
+                <p class="step-text">
+                    리더 로봇을 작업 로봇의 원점과 동일하게 배치한 후 "Save & Go Next" 버튼을 클릭합니다.
+                </p>
+                <img src="../img/slide_10_image_0.png" alt="원점 캘리브레이션" class="step-image">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">✋</span>
+                Step 2. 그리퍼 캘리브레이션
+            </h2>
+
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>5. 그리퍼 열림 상태 저장</strong><br>
+                            리더 로봇 그리퍼를 벌린 상태에서 첫 번째 값을 저장합니다.
+                        </p>
+                        <img src="../img/slide_10_image_11.png" alt="그리퍼 열림" class="step-image">
+                        <img src="../img/slide_10_image_2.png" alt="그리퍼 열림" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>6. 그리퍼 닫힘 상태 저장</strong><br>
+                            리더 로봇 그리퍼를 닫은 상태에서 두 번째 값을 저장합니다.
+                        </p>
+                        <img src="../img/slide_10_image_12.png" alt="그리퍼 닫힘" class="step-image">
+                        <img src="../img/slide_10_image_3.png" alt="그리퍼 닫힘" class="step-image">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔄</span>
+                Step 3. 조인트 방향 설정
+            </h2>
+
+            <div class="content-block">
+                <p class="step-text">
+                    텔레오퍼레이션을 직접 해보면서 반대로 움직이는 조인트 번호를 체크합니다.
+                </p>
+                <img src="../img/slide_10_image_5.png" alt="텔레오퍼레이션 실행" class="step-image">
+                <img src="../img/slide_10_image_4.png" alt="텔레오퍼레이션 실행" class="step-image">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🎚️</span>
+                Step 4. 부드러움 설정
+            </h2>
+
+            <div class="content-block">
+                <p class="step-text">
+                    EMA 계수 설정을 통해 로봇이 리더 로봇을 따라 보다 부드럽게 움직이도록 설정합니다.
+                </p>
+                <img src="../img/slide_10_image_6.png" alt="텔레오퍼레이션 실행" class="step-image">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">▶️</span>
+                텔레오퍼레이션 실행
+            </h2>
+
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>1. 초기화</strong><br>
+                            텔레오퍼레이션 실행 시, 리더 로봇에 토크가 걸리며 작업 로봇과 동일한 포즈로 이동합니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>2. 조종 시작</strong><br>
+                            포즈를 맞춘 상태에서 그리퍼를 닫으면 리더 로봇에 토크가 풀리며 로봇을 조종할 수 있습니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>3. 정지</strong><br>
+                            그리퍼를 일정 각도 이상으로 벌리면, 리더 로봇에 토크가 걸리며 그 자리에서 정지합니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="info-box success">
+            <div class="info-box-title">💡 유용한 팁</div>
+            <p>처음에는 천천히 움직이면서 로봇의 반응을 확인하세요. 캘리브레이션이 정확할수록 조작이 편리합니다.</p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="05-easy-controller.html" class="nav-button prev">← 이전</a>
+            <a href="07-workspace.html" class="nav-button">다음 →</a>
+        </div>
+    </main>
+</body>
+</html>

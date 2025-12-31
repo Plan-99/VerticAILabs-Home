@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inference - Easy-Trainer Manual</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <div class="logo">ET</div>
+            <span>Easy-Trainer Manual</span>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html"><span class="nav-number">📘</span>홈</a></li>
+                <li><a href="01-installation.html" ><span class="nav-number">1</span>Installation</a></li>
+                <li><a href="02-sensor.html" ><span class="nav-number">2</span>Sensor</a></li>
+                <li><a href="03-robot.html" ><span class="nav-number">3</span>Robot</a></li>
+                <li><a href="04-robot-assembly.html" ><span class="nav-number">4</span>Robot Assembly</a></li>
+                <li><a href="05-easy-controller.html" ><span class="nav-number">5</span>Easy-Controller</a></li>
+                <li><a href="06-teleoperation.html" ><span class="nav-number">6</span>Teleoperation</a></li>
+                <li><a href="07-workspace.html" ><span class="nav-number">7</span>Workspace</a></li>
+                <li><a href="08-data-collection.html" ><span class="nav-number">8</span>Data Collection</a></li>
+                <li><a href="09-data-augmentation.html" ><span class="nav-number">9</span>Data Augmentation</a></li>
+                <li><a href="10-training.html" ><span class="nav-number">10</span>Training</a></li>
+                <li><a href="11-inference.html" class="active"><span class="nav-number">11</span>Inference</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="page-title">
+            <span class="title-number">11</span>
+            Inference
+        </h1>
+        <p class="page-subtitle">
+            학습된 모델로 로봇을 자율 작동시키는 방법을 안내합니다.
+        </p>
+
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🚀</span>
+                추론 실행
+            </h2>
+
+            <div class="info-box">
+                <div class="info-box-title">추론이란?</div>
+                <p>
+                    학습된 모델을 사용하여 로봇이 스스로 작업을 수행하도록 하는 과정입니다.
+                </p>
+            </div>
+
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>1. 모델 확인</strong><br>
+                            Workspace 탭 → Inference 탭에 학습시킨 모델이 추가됩니다.
+                        </p>
+                        <img src="../img/slide_17_image_0.png" alt="모델 확인" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>2. 로봇 및 카메라 준비</strong><br>
+                            로봇과 카메라가 켜진 상태인지 확인합니다.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>3. 추론 시작</strong><br>
+                            모델을 클릭한 후 "Start Inference" 버튼을 클릭합니다.
+                        </p>
+                        <img src="../img/slide_17_image_1.png" alt="추론 실행" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>4. 모니터링</strong><br>
+                            로봇이 작업을 수행하는 동안 이상이 없는지 모니터링합니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="info-box warning">
+            <div class="info-box-title">⚠️ 안전 주의사항</div>
+            <p>추론 실행 시 로봇 주변에 장애물이 없는지 확인하고, 비상 정지 버튼을 항상 준비하세요.</p>
+        </div>
+
+        <div class="info-box success">
+            <div class="info-box-title">🎉 완료!</div>
+            <p>축하합니다! Easy-Trainer의 모든 기능을 배웠습니다. 이제 다양한 작업을 로봇에게 학습시켜 보세요!</p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="10-training.html" class="nav-button prev">← 이전</a>
+            <a href="index.html" class="nav-button">다음 →</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy-Trainer 사용 매뉴얼</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .hero {
+            min-height: calc(100vh - var(--header-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <div class="logo">ET</div>
+            <span>Easy-Trainer Manual</span>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html" class="active"><span class="nav-number">📘</span>홈</a></li>
+                <li><a href="01-installation.html"><span class="nav-number">1</span>Installation</a></li>
+                <li><a href="02-sensor.html"><span class="nav-number">2</span>Sensor</a></li>
+                <li><a href="03-robot.html"><span class="nav-number">3</span>Robot</a></li>
+                <li><a href="04-robot-assembly.html"><span class="nav-number">4</span>Robot Assembly</a></li>
+                <li><a href="05-easy-controller.html"><span class="nav-number">5</span>Easy-Controller</a></li>
+                <li><a href="06-teleoperation.html"><span class="nav-number">6</span>Teleoperation</a></li>
+                <li><a href="07-workspace.html"><span class="nav-number">7</span>Workspace</a></li>
+                <li><a href="08-data-collection.html"><span class="nav-number">8</span>Data Collection</a></li>
+                <li><a href="09-data-augmentation.html"><span class="nav-number">9</span>Data Augmentation</a></li>
+                <li><a href="10-training.html"><span class="nav-number">10</span>Training</a></li>
+                <li><a href="11-inference.html"><span class="nav-number">11</span>Inference</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content" style="margin-left: var(--sidebar-width);">
+        <div class="hero">
+            <h1 class="hero-title">Easy-Trainer</h1>
+            <p class="hero-subtitle">로봇 학습을 위한 직관적이고 강력한 플랫폼</p>
+
+            <a href="01-installation.html" class="cta-button">시작하기 →</a>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">빠른 설치</h3>
+                    <p class="feature-description">간단한 설정으로 몇 분 안에 시작할 수 있습니다</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">다양한 로봇 지원</h3>
+                    <p class="feature-description">여러 종류의 로봇과 센서를 손쉽게 연결하고 제어합니다</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">데이터 수집 & 증강</h3>
+                    <p class="feature-description">효율적인 데이터 수집과 강력한 데이터 증강 기능을 제공합니다</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">텔레오퍼레이션</h3>
+                    <p class="feature-description">리더 로봇을 통한 직관적인 로봇 제어가 가능합니다</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">AI 학습</h3>
+                    <p class="feature-description">수집된 데이터로 로봇을 학습시키고 실시간 추론을 수행합니다</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">실시간 추론</h3>
+                    <p class="feature-description">학습된 모델을 사용하여 로봇이 자율적으로 작업을 수행합니다</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

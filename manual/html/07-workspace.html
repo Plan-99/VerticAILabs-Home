@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace - Easy-Trainer Manual</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <div class="logo">ET</div>
+            <span>Easy-Trainer Manual</span>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html"><span class="nav-number">📘</span>홈</a></li>
+                <li><a href="01-installation.html" ><span class="nav-number">1</span>Installation</a></li>
+                <li><a href="02-sensor.html" ><span class="nav-number">2</span>Sensor</a></li>
+                <li><a href="03-robot.html" ><span class="nav-number">3</span>Robot</a></li>
+                <li><a href="04-robot-assembly.html" ><span class="nav-number">4</span>Robot Assembly</a></li>
+                <li><a href="05-easy-controller.html" ><span class="nav-number">5</span>Easy-Controller</a></li>
+                <li><a href="06-teleoperation.html" ><span class="nav-number">6</span>Teleoperation</a></li>
+                <li><a href="07-workspace.html" class="active"><span class="nav-number">7</span>Workspace</a></li>
+                <li><a href="08-data-collection.html" ><span class="nav-number">8</span>Data Collection</a></li>
+                <li><a href="09-data-augmentation.html" ><span class="nav-number">9</span>Data Augmentation</a></li>
+                <li><a href="10-training.html" ><span class="nav-number">10</span>Training</a></li>
+                <li><a href="11-inference.html" ><span class="nav-number">11</span>Inference</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="page-title">
+            <span class="title-number">7</span>
+            Workspace
+        </h1>
+        <p class="page-subtitle">
+            작업 환경 설정 및 워크스페이스 관리 방법을 안내합니다.
+        </p>
+
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🗂️</span>
+                Workspace란?
+            </h2>
+
+            <div class="info-box">
+                <div class="info-box-title">워크스페이스 소개</div>
+                <p>
+                    Workspace 페이지는 <strong>로봇에게 시키고 싶은 작업</strong>에 대한 페이지입니다.
+                </p>
+                <p>
+                    작업 환경을 설정하고, 데이터를 수집하고, 추론을 통해 직접 일을 시킬 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">⚙️</span>
+                작업 환경 설정
+            </h2>
+
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>1. 워크스페이스 선택</strong><br>
+                            Workspace 탭 → "Select Workspace"에서 워크스페이스를 선택하거나 새로 생성합니다.
+                            → Setting 탭으로 이동합니다.
+                        </p>
+                        <img src="../img/slide_12_image_0.png" alt="워크스페이스 선택" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>2. 센서 선택</strong><br>
+                            작업에서 사용하고 싶은 센서 및 화질을 선택합니다.
+                            선택 시 카메라 화면이 선택한 화질로 표시됩니다.
+                        </p>
+                        <img src="../img/slide_12_image_1.png" alt="센서 선택" class="step-image">
+                        <img src="../img/slide_12_image_2.png" alt="센서 선택" class="step-image">
+                        <img src="../img/slide_12_image_3.png" alt="센서 선택" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>3. 로봇 어셈블리 선택</strong><br>
+                            작업에서 사용하고 싶은 로봇 어셈블리를 선택합니다.
+                            선택 시, 로봇의 현재 포지션 값과 액션 값(리더 로봇의 포지션 값)이 화면에 표시됩니다.
+                        </p>
+                        <img src="../img/slide_12_image_4.png" alt="로봇 어셈블리 선택" class="step-image">
+                        <img src="../img/slide_12_image_5.png" alt="로봇 어셈블리 선택" class="step-image">
+                        <img src="../img/slide_12_image_6.png" alt="로봇 어셈블리 선택" class="step-image">
+                    </div>
+                </li>
+
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>4. 에피소드 길이 설정</strong><br>
+                            작업 데이터의 에피소드 길이를 선택합니다.
+                        </p>
+                        <img src="../img/slide_12_image_7.png" alt="로봇 어셈블리 선택" class="step-image">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="info-box success">
+            <div class="info-box-title">💡 유용한 팁</div>
+            <p>워크스페이스 설정은 데이터 수집 전에 반드시 완료해야 합니다. 작업마다 별도의 워크스페이스를 만들어 관리하는 것을 권장합니다.</p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="06-teleoperation.html" class="nav-button prev">← 이전</a>
+            <a href="08-data-collection.html" class="nav-button">다음 →</a>
+        </div>
+    </main>
+</body>
+</html>

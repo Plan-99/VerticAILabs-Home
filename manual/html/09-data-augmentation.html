@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Augmentation - Easy-Trainer Manual</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <div class="logo">ET</div>
+            <span>Easy-Trainer Manual</span>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html"><span class="nav-number">📘</span>홈</a></li>
+                <li><a href="01-installation.html" ><span class="nav-number">1</span>Installation</a></li>
+                <li><a href="02-sensor.html" ><span class="nav-number">2</span>Sensor</a></li>
+                <li><a href="03-robot.html" ><span class="nav-number">3</span>Robot</a></li>
+                <li><a href="04-robot-assembly.html" ><span class="nav-number">4</span>Robot Assembly</a></li>
+                <li><a href="05-easy-controller.html" ><span class="nav-number">5</span>Easy-Controller</a></li>
+                <li><a href="06-teleoperation.html" ><span class="nav-number">6</span>Teleoperation</a></li>
+                <li><a href="07-workspace.html" ><span class="nav-number">7</span>Workspace</a></li>
+                <li><a href="08-data-collection.html" ><span class="nav-number">8</span>Data Collection</a></li>
+                <li><a href="09-data-augmentation.html" class="active"><span class="nav-number">9</span>Data Augmentation</a></li>
+                <li><a href="10-training.html" ><span class="nav-number">10</span>Training</a></li>
+                <li><a href="11-inference.html" ><span class="nav-number">11</span>Inference</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1 class="page-title">
+            <span class="title-number">9</span>
+            Data Augmentation
+        </h1>
+        <p class="page-subtitle">
+            데이터 증강을 통해 학습 데이터의 다양성을 높이는 방법을 안내합니다.
+        </p>
+
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                데이터 증강이란?
+            </h2>
+
+            <div class="info-box">
+                <div class="info-box-title">증강의 목적</div>
+                <p>
+                    다양한 환경에 강건하게 학습을 시키기 위해, 수집한 데이터를 조작하여 증강합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🎨</span>
+                증강 방법
+            </h2>
+
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-content">
+                        <p class="step-text">
+                            <strong>1. 증강 시작</strong><br>
+                            Workspace 탭 → Data 탭에서 데이터 폴더를 우클릭한 후 "Augment Dataset"을 클릭합니다.
+                        </p>
+                        <img src="../img/slide_14_image_0.png" alt="증강 시작" class="step-image">
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="subsection-title">증강 기법</h3>
+
+            <div class="content-block">
+                <div class="info-box">
+                    <div class="info-box-title">💡 Lightness (밝기 조절)</div>
+                    <p>이미지의 밝기를 단순히 조절하여 다양한 조명 환경을 시뮬레이션합니다.</p>
+                    <img src="../img/slide_14_image_1.png" alt="Lightness" class="step-image">
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">🔲 Disturbances (방해 요소)</div>
+                    <p>이미지에 지정한 색상의 사각형을 추가하여 방해 요소를 학습시킵니다.</p>
+                    <img src="../img/slide_14_image_2.png" alt="Disturbances" class="step-image">
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">⚪⚫ Salt and Pepper (노이즈)</div>
+                    <p>이미지에 랜덤하게 흰 픽셀과 검은 픽셀을 추가하여 노이즈에 강건하게 만듭니다.</p>
+                    <img src="../img/slide_14_image_3.png" alt="Salt and Pepper" class="step-image">
+                </div>
+
+                <div class="info-box">
+                    <div class="info-box-title">🌫️ Gaussian Noise (가우시안 노이즈)</div>
+                    <p>이미지에 가우시안 노이즈를 추가하여 센서 노이즈를 시뮬레이션합니다.</p>
+                    <img src="../img/slide_14_image_4.png" alt="Gaussian Noise" class="step-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box success">
+            <div class="info-box-title">💡 유용한 팁</div>
+            <p>모든 증강 기법을 적용하기보다는, 실제 작업 환경에 맞는 증강 기법을 선택적으로 사용하세요.</p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="08-data-collection.html" class="nav-button prev">← 이전</a>
+            <a href="10-training.html" class="nav-button">다음 →</a>
+        </div>
+    </main>
+</body>
+</html>
